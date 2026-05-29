@@ -2,11 +2,11 @@
 
 /* Globale Farbvariablen für einfache Anpassung */
 :root {
-    --primary-color: #d4a373;     /* Warmes Sand/Gold für Buttons und Akzente */
-    --secondary-color: #ccd5ae;   /* Sanftes Olivgrün für die Rahmen */
+    --primary-color: #e38f6b;     /* Warmes Sand/Gold für Buttons und Akzente */
+    --secondary-color: #d5c1ae;   /* Sanftes Olivgrün für die Rahmen */
     --dark-color: #333333;        /* Dunkelgrau für gute Textlesbarkeit */
-    --light-color: #f8f9fa;       /* Sehr helles Grau für den Fieldset-Hintergrund */
-    --bg-color: #faedcd;          /* Cremefarbener Seitenhintergrund */
+    --light-color: #faf9f8;       /* Sehr helles Grau für den Fieldset-Hintergrund */
+    --bg-color: #fae0cd;          /* Cremefarbener Seitenhintergrund */
 }
 
 /* Grund-Layout der Seite */
@@ -119,7 +119,7 @@ input:focus, select:focus, textarea:focus {
 /* Spezielles Styling für das Attribut: readonly */
 input[readonly] {
     background-color: #e9ecef;
-    color: #495057;
+    color: #574f49;
     cursor: not-allowed; /* Zeigt ein "Verboten"-Symbol beim Drüberfahren */
 }
 
