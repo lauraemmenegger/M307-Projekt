@@ -98,7 +98,9 @@ input[type="tel"],
 input[type="date"],
 input[type="number"],
 select,
+
 textarea {
+    resize: vertical;
     width: 100%;
     padding: 10px;
     border: 1px solid #cccccc;
