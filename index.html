@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hallo Anja</title>
+    <title>Anmeldung - Cocktail-Workshop</title>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+<div class="container">
+    <h1>Event-Anmeldung</h1>
+    <p class="subtitle">Cocktail-Workshop & Premium Tasting</p>
+
+    <form action="#" method="GET">
+
+        <fieldset>
+            <legend>1. Persönliche Daten</legend>
+            
+            <div class="form-group">
+                <label for="anrede">Anrede</label>
+                <select id="anrede" name="anrede">
+                    <option value="">-- Bitte wählen --</option>
+                    <option value="Frau">Frau</option>
+                    <option value="Herr">Herr</option>
+                    <option value="Divers">Divers</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="vorname">Vorname *</label>
+                    <input type="text" id="vorname" name="vorname" placeholder="Max" autofocus required>
+                </div>
+                <div class="form-group">
+                    <label for="nachname">Nachname *</label>
+                    <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="geburtsdatum">Geburtsdatum * (Mindestalter 16 Jahre)</label>
+                <input type="date" id="geburtsdatum" name="geburtsdatum" max="2110-05-29" required>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>2. Kontaktdaten</legend>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" placeholder="max@mustermann.de" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+49 123 456789">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="strasse">Straße und Hausnummer</label>
+                <input type="text" id="strasse" name="strasse" placeholder="Musterstraße 42">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group" style="flex: 0.3;">
+                    <label for="plz">PLZ</label>
+                    <input type="text" id="plz" name="plz" placeholder="12345">
+                </div>
+                <div class="form-group">
+                    <label for="ort">Ort</label>
+                    <input type="text" id="ort" name="ort" placeholder="Musterstadt">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="land">Land</label>
+                <input type="text" id="land" name="land" value="Deutschland" readonly>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>3. Event- & Buchungsdetails</legend>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="datum">Gewünschtes Datum *</label>
+                    <input type="date" id="datum" name="datum" required>
+                </div>
+                <div class="form-group">
+                    <label for="zeitfenster">Zeitfenster *</label>
+                    <select id="zeitfenster" name="zeitfenster" required>
+                        <option value="">-- Zeit wählen --</option>
+                        <option value="16:00 - 18:30">16:00 - 18:30 Uhr</option>
+                        <option value="19:00 - 21:30">19:00 - 21:30 Uhr</option>
+                        <option value="22:00 - 00:30" disabled>22:00 - 00:30 Uhr (Ausgebucht)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="anzahl_personen">Anzahl Personen *</label>
+                <input type="number" id="anzahl_personen" name="anzahl_personen" min="1" max="20" value="1" required>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>4. Paketauswahl</legend>
+            <label>Wähle dein Workshop-Paket: *</label>
+            
+            <div class="radio-group">
+                <label class="radio-item">
+                    <input type="radio" name="paket" value="Cocktail Simple" required>
+                    <div>
+                        <strong>Cocktail Simple</strong><br>
+                        <small>Grundlagen, 3 Standard-Cocktails, inkl. Rezeptskript.</small>
+                    </div>
+                </label>
+
+                <label class="radio-item">
+                    <input type="radio" name="paket" value="Cocktail & Food">
+                    <div>
+                        <strong>Cocktail & Food</strong><br>
+                        <small>3 Premium-Cocktails gepaart mit passenden Fingerfood-Snacks.</small>
+                    </div>
+                </label>
+
+                <label class="radio-item">
+                    <input type="radio" name="paket" value="Cocktail Premium">
+                    <div>
+                        <strong>Cocktail Premium</strong><br>
+                        <small>5 exklusive Eigenkreationen, Raritäten-Tasting und Bar-Zertifikat.</small>
+                    </div>
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="bemerkungen">Bemerkungen / Allergien / Wünsche</label>
+            <textarea id="bemerkungen" name="bemerkungen" rows="4" placeholder="Z. B. Allergien, vegetarische Snacks, alkoholfreie Optionen gewünscht..."></textarea>
+        </div>
+
+        <button type="submit">Jetzt verbindlich anmelden</button>
+
+    </form>
+</div>
+
 </body>
 </html>
