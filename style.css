@@ -98,8 +98,8 @@ input[type="tel"],
 input[type="date"],
 input[type="number"],
 select,
-textarea {
 
+textarea {
     resize: vertical;
     width: 100%;
     padding: 10px;
