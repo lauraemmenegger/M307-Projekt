@@ -1,0 +1,185 @@
+/* --- CSS DESIGN FÜR COCKTAIL-WORKSHOP ANMELDUNG --- */
+
+/* Globale Farbvariablen für einfache Anpassung */
+:root {
+    --primary-color: #d4a373;     /* Warmes Sand/Gold für Buttons und Akzente */
+    --secondary-color: #ccd5ae;   /* Sanftes Olivgrün für die Rahmen */
+    --dark-color: #333333;        /* Dunkelgrau für gute Textlesbarkeit */
+    --light-color: #f8f9fa;       /* Sehr helles Grau für den Fieldset-Hintergrund */
+    --bg-color: #faedcd;          /* Cremefarbener Seitenhintergrund */
+}
+
+/* Grund-Layout der Seite */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Weißer Inhaltscontainer, der das Formular zentriert */
+.container {
+    max-width: 700px;
+    background: #ffffff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Überschriften-Design */
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777777;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Sinnvolle Gruppierung durch Fieldset-Styling */
+fieldset {
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: var(--light-color);
+}
+
+/* Styling für die Gruppen-Titel (Legend) */
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #b7b7a4;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Abstände der Formular-Elemente */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Zweispaltiges Layout für Vorname/Nachname, PLZ/Ort etc. */
+.form-row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.form-row .form-group {
+    display: table-cell;
+    padding-right: 15px;
+}
+
+.form-row .form-group:last-child {
+    padding-right: 0; /* Verhindert doppelten Abstand ganz rechts */
+}
+
+/* Label-Beschriftungen über den Feldern */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Universelles Styling für diverse Eingabetypen */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garantiert, dass Padding das Feld nicht verbreitert */
+    font-size: 1em;
+    font-family: inherit;
+    background-color: #ffffff;
+}
+
+/* Visueller Effekt, wenn der User in ein Feld klickt (Fokus) */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(212, 163, 115, 0.5);
+}
+
+/* Spezielles Styling für das Attribut: readonly */
+input[readonly] {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: not-allowed; /* Zeigt ein "Verboten"-Symbol beim Drüberfahren */
+}
+
+/* Spezielles Styling für das Attribut: disabled in Dropdowns */
+select option[disabled] {
+    color: #999999;
+    font-style: italic;
+}
+
+/* Styling für die Kacheln der Radio-Buttons (Paketauswahl) */
+.radio-group {
+    margin-top: 8px;
+}
+
+.radio-item {
+    display: block;
+    background: #ffffff;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.radio-item:last-child {
+    margin-bottom: 0;
+}
+
+.radio-item input {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.radio-item div {
+    display: inline-block;
+    vertical-align: middle;
+    width: 90%;
+}
+
+.radio-item small {
+    color: #666666;
+}
+
+/* Styling für den Absende-Button */
+button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Button-Effekt beim Drüberfahren mit der Maus */
+button:hover {
+    background-color: #bc8a5f;
+}
