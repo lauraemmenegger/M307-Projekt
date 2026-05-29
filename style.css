@@ -217,3 +217,60 @@ button:hover {
         flex: 1; 
     }
 }
+
+/* Styling für die Datenschutz-Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.checkbox-group .label-inline {
+    display: inline;
+    font-weight: normal;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+/* Flexbox für die beiden Buttons am Ende */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-submit {
+    flex: 2; /* Der Absendebutton bleibt optisch im Fokus (breiter) */
+    margin-top: 0; 
+}
+
+.btn-reset {
+    flex: 1; /* Der Löschbutton ist etwas schmaler */
+    background-color: #e63946; /* Rote Warnfarbe für das Löschen */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: #b71c1c;
+}
+
+/* Responsive Anpassung für die Buttons auf Handys */
+@media (max-width: 520px) {
+    .button-group {
+        flex-direction: column;
+    }
+}
