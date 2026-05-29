@@ -19,7 +19,7 @@ body {
     margin: 0;
 }
 
-/* Weißer Inhaltscontainer, der das Formular zentriert */
+/* Weisser Inhaltscontainer, der das Formular zentriert */
 .container {
     max-width: 700px;
     background: #ffffff;
@@ -62,25 +62,28 @@ legend {
     letter-spacing: 0.5px;
 }
 
-/* Abstände der Formular-Elemente */
+ Flexbox-Layout für die Formularzeilen
+
+/* Abstände der Formular-Elemente (unverändert gut) */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Zweispaltiges Layout für Vorname/Nachname, PLZ/Ort etc. */
+/* JETZT KORREKT: Flexbox für das zweispaltige Layout auf Desktops (> 520px) */
 .form-row {
-    display: table;
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* Erzeugt automatisch den perfekten Abstand zwischen den Spalten */
     width: 100%;
-    table-layout: fixed;
 }
 
 .form-row .form-group {
-    display: table-cell;
-    padding-right: 15px;
+    flex: 1; /* Verteilt den Platz gleichmäßig auf die Felder */
 }
 
-.form-row .form-group:last-child {
-    padding-right: 0; /* Verhindert doppelten Abstand ganz rechts */
+/* Beibehaltung der schmaleren Gewichtung für das PLZ-Feld auf Desktops */
+.form-row .form-group.zip-field {
+    flex: 0.3;
 }
 
 /* Label-Beschriftungen über den Feldern */
@@ -184,4 +187,33 @@ button {
 /* Button-Effekt beim Drüberfahren mit der Maus */
 button:hover {
     background-color: #bc8a5f;
+}
+
+/* --- MEDIA QUERY FÜR RESPONSIVE DARSTELLUNG (SMARTPHONES) --- */
+/* Greift, sobald der Bildschirm 520px oder schmaler ist */
+@media (max-width: 520px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    /* Schaltet die Flex-Ausrichtung von Reihe (nebeneinander) auf Spalte (untereinander) um */
+    .form-row {
+        flex-direction: column;
+        gap: 0; /* Verhindert ungewollte Abstände zwischen den umgebrochenen Zeilen */
+    }
+
+    /* Betrifft die Paare: Vorname/Nachname, E-Mail/Telefon & Datum/Zeitfenster */
+    .form-row .form-group {
+        width: 100%;
+    }
+    
+    /* Das PLZ-Feld nutzt auf dem Smartphone nun ebenfalls die volle Breite */
+    .form-row .form-group.zip-field {
+        flex: 1; 
+    }
 }
