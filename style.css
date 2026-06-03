@@ -7,6 +7,10 @@
     --dark-color: #333333;        /* Dunkelgrau für gute Textlesbarkeit */
     --light-color: #faf9f8;       /* Sehr helles Grau für den Fieldset-Hintergrund */
     --bg-color: #fae0cd;          /* Cremefarbener Seitenhintergrund */
+    
+    /* NEU: Farben für die Validierung */
+    --valid-color: #2a9d8f;       /* Angenehmes Grün für gültige Felder */
+    --invalid-color: #e63946;     /* Klares Rot für ungültige Felder */
 }
 
 /* Grund-Layout der Seite */
@@ -62,14 +66,15 @@ legend {
     letter-spacing: 0.5px;
 }
 
- Flexbox-Layout für die Formularzeilen
+/* KORRIGIERT: Textfehler in echten CSS-Kommentar umgewandelt */
+/* Flexbox-Layout für die Formularzeilen */
 
-/* Abstände der Formular-Elemente (unverändert gut) */
+/* Abstände der Formular-Elemente */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* JETZT KORREKT: Flexbox für das zweispaltige Layout auf Desktops (> 520px) */
+/* Flexbox für das zweispaltige Layout auf Desktops (> 520px) */
 .form-row {
     display: flex;
     flex-direction: row;
@@ -101,7 +106,6 @@ input[type="tel"],
 input[type="date"],
 input[type="number"],
 select,
-
 textarea {
     resize: vertical;
     width: 100%;
@@ -112,14 +116,61 @@ textarea {
     font-size: 1em;
     font-family: inherit;
     background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Visueller Effekt, wenn der User in ein Feld klickt (Fokus) */
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(212, 163, 115, 0.5);
+    box-shadow: 0 0 5px rgba(227, 143, 107, 0.5);
 }
+
+/* ==========================================
+   NEU: VALDIERUNGS-STYLING (Grün / Rot)
+   ========================================== */
+
+/* 1. GÜLTIGE FELDER: Wenn das Feld korrekt ausgefüllt ist */
+input:text:valid,
+input:email:valid,
+input:tel:valid,
+input:date:valid,
+input:number:valid,
+select:valid {
+    border-color: var(--valid-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232a9d8f' width='18' height='18'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 18px;
+    padding-right: 35px; /* Platz für das Häkchen-Icon */
+}
+
+/* 2. UNGÜLTIGE FELDER (Erst nach Interaktion oder unvollständigem Senden) */
+/* :user-invalid sorgt dafür, dass leere Pflichtfelder im Fokus (wie dein Vorname beim Start) */
+/* NICHT direkt rot werden. Erst wenn man hineinklickt, etwas falsch macht und das Feld verlässt, */
+/* ODER wenn man versucht, das Formular unvollständig abzusenden, schlägt die rote Farbe an. */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--invalid-color) !important;
+    background-color: #fff5f5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e63946' width='18' height='18'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 10px) center !important;
+    background-size: 18px !important;
+    padding-right: 35px;
+    box-shadow: 0 0 5px rgba(230, 57, 70, 0.3) !important;
+}
+
+/* Wenn ein Feld ungültig ist, während man noch tippt (z.B. falsches PLZ-Format), */
+/* soll es ein sanftes orangefarbenes/klassisches Fokus-Signal geben, anstatt sofort hart rot zu leuchten. */
+input:focus:invalid,
+select:focus:invalid {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(227, 143, 107, 0.5);
+    background-image: none !important; /* Entfernt das Warn-Icon während des Tippens */
+}
+
 
 /* Spezielles Styling für das Attribut: readonly */
 input[readonly] {
@@ -169,7 +220,7 @@ select option[disabled] {
 }
 
 /* Styling für den Absende-Button */
-button {
+button[type="submit"] {
     display: block;
     width: 100%;
     padding: 14px;
@@ -185,7 +236,7 @@ button {
 }
 
 /* Button-Effekt beim Drüberfahren mit der Maus */
-button:hover {
+button[type="submit"]:hover {
     background-color: #bc8a5f;
 }
 
@@ -218,8 +269,7 @@ button:hover {
     }
 }
 
-/*hier stimmt was noch nicht!!!*/
-
+/* KORRIGIERT: Steht jetzt sauber unterhalb der Media-Query */
 /* Styling für die Datenschutz-Checkbox */
 .checkbox-group {
     display: flex;
