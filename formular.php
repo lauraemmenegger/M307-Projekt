@@ -57,14 +57,14 @@ $mailGesendet = mail($empfaenger, $betreff, $nachricht, $header);
 </head>
 <body>
 
-//Css Teil farblich //
+    // Css Teil in php 
 <div class="container" style="text-align: center;">
     <?php if ($mailGesendet): ?>
-        <h1 style="color: #2a9d8f;">✓ Buchung erfolgreich!</h1>
+        <h1 style="color: #e38f6b;">✓ Buchung erfolgreich!</h1>
         <p class="subtitle">Vielen Dank, <?php echo $vorname; ?>!</p>
         
-        <fieldset style="text-align: left; background: #f0fff4; border-color: #2a9d8f;">
-            <legend style="color: #2a9d8f;">Deine Buchungsübersicht</legend>
+        <fieldset style="text-align: left; background: #fff6f0; border-color: #e38f6b;">
+            <legend style="color: #e38f6b;">Deine Buchungsübersicht</legend>
             <p>Eine Bestätigungsmail wurde soeben an <strong><?php echo $email; ?></strong> gesendet.</p>
             <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
             <p><strong>Workshop-Paket:</strong> <?php echo $paket; ?></p>
