@@ -34,8 +34,8 @@ $nachricht .= "--- EVENT DETAILS ---\n";
 $nachricht .= "Datum: " . $datum . "\n";
 $nachricht .= "Uhrzeit: " . $zeitfenster . " Uhr\n";
 $nachricht .= "Personenanzahl: " . $anzahl_personen . "\n";
-$nachricht .= "Gewaehltes Paket: " . $paket . "\n";
-$nachricht .= "Deine Wuensche: " . $bemerkungen . "\n\n";
+$nachricht .= "Gewähltes Paket: " . $paket . "\n";
+$nachricht .= "Deine Wünsche: " . $bemerkungen . "\n\n";
 $nachricht .= "Wir freuen uns riesig auf dich!\nMit freundlichen Gruessen,\nDein Cocktail-Team";
 
 // Wichtige technische Zusatzinfos für den E-Mail-Versand (Absender definieren)
