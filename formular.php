@@ -24,7 +24,7 @@ $betreff = "Buchungsbestaetigung: Dein Cocktail-Workshop";
 
 // Hier bauen wir den Text der E-Mail zusammen
 $nachricht = "Hallo " . $vorname . " " . $nachname . ",\n\n";
-$nachricht .= "Vielen Dank fuer deine Buchung! Hier ist deine Uebersicht:\n\n";
+$nachricht .= "Vielen Dank für deine Buchung! Hier ist deine Übersicht:\n\n";
 $nachricht .= "--- DEINE DATEN ---\n";
 $nachricht .= "Name: " . $anrede . " " . $vorname . " " . $nachname . "\n";
 $nachricht .= "Geburtsdatum: " . $geburtsdatum . "\n";
