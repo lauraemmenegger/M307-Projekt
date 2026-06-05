@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung - Cocktail-Workshop</title>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +15,7 @@
     <form action="formular.php" method="post">
 
         <fieldset>
-            <legend>1. Persönliche Daten</legend>
+            <legend>1. Personaldaten</legend>
             
             <div class="form-group">
                 <label for="anrede">Anrede</label>
@@ -45,7 +44,6 @@
             </div>
         </fieldset>
 
-
         <fieldset>
             <legend>2. Kontaktdaten</legend>
 
@@ -59,7 +57,7 @@
                     <input type="tel" id="telefon" name="telefon" 
                            placeholder="+41 79 123 45 67" 
                            pattern="^\+?[0-9]{1,4}[ ]?[0-9]{2}[ ]?[0-9]{3}[ ]?[0-9]{2}[ ]?[0-9]{2}$"
-                           title="Bitte verwenden Sie das Format: +41 79 123 45 67 (Ländervorwahl gefolgt von der Nummer)" required>
+                           title="Bitte verwenden Sie das Format: +41 79 123 45 67" required>
                 </div>
             </div>
 
@@ -69,7 +67,7 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group" style="flex: 0.3;">
+                <div class="form-group zip-field">
                     <label for="plz">PLZ *</label>
                     <input type="text" id="plz" name="plz" placeholder="1234" pattern="[0-9]{4}" title="Die Postleitzahl muss exakt aus 4 Ziffern bestehen." required>
                 </div>
@@ -84,7 +82,6 @@
                 <input type="text" id="land" name="land" value="Schweiz" >
             </div>
         </fieldset>
-
 
         <fieldset>
             <legend>3. Event- & Buchungsdetails</legend>
@@ -110,7 +107,6 @@
                 <input type="number" id="anzahl_personen" name="anzahl_personen" min="1" max="20" value="1" required>
             </div>
         </fieldset>
-
 
         <fieldset>
             <legend>4. Paketauswahl</legend>
@@ -145,23 +141,22 @@
 
         <div class="form-group">
             <label for="bemerkungen">Bemerkungen / Allergien / Wünsche</label>
-            <textarea id="bemerkungen" name="bemerkungen" rows="4" placeholder="Z. B. Allergien, vegetarische Snacks, alkoholfreie Optionen gewünscht..."></textarea>
+            <textarea id="bemerkungen" name="bemerkungen" rows="4" placeholder="Z. B. Allergien, vegetarische Snacks..."></textarea>
         </div>
 
-        <div class="form-group privacy-row" style="display: flex; gap: 10px; align-items: flex-start; margin: 20px 0;">
-            <input type="checkbox" id="datenschutz" name="datenschutz" required style="width: auto; margin-top: 5px;">
-            <label for="datenschutz" style="font-weight: normal; font-size: 0.95em;">Ich habe die Datenschutzbestimmungen gelesen und stimme zu, dass meine Daten zur Bearbeitung der Anmeldung gespeichert werden. *</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="datenschutz" name="datenschutz" required>
+            <label for="datenschutz" class="label-inline">Ich habe die Datenschutzbestimmungen gelesen und stimme zu. *</label>
         </div>
 
-        <div class="form-actions" style="display: flex; gap: 15px;">
-            <button type="submit" style="flex: 2; margin-top: 0;">Jetzt verbindlich anmelden. Wir freuen uns auf dich!</button>
-            <button type="reset" class="btn-reset" style="flex: 1; background-color: #d9534f; margin-top: 0;">Formular zurücksetzen</button>
+        <div class="button-group">
+            <button type="submit" class="btn-submit">Jetzt verbindlich anmelden!</button>
+            <button type="reset" class="btn-reset">Löschen</button>
         </div>
 
     </form>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
