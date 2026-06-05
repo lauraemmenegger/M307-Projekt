@@ -57,6 +57,7 @@ $mailGesendet = mail($empfaenger, $betreff, $nachricht, $header);
 </head>
 <body>
 
+//Css Teil farblich //
 <div class="container" style="text-align: center;">
     <?php if ($mailGesendet): ?>
         <h1 style="color: #2a9d8f;">✓ Buchung erfolgreich!</h1>
