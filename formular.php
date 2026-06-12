@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = true;
     }
 
+    // 8. Zeitfenster
     if (isset($_POST['zeitfenster'])) {
         $zeitfenster = trim($_POST['zeitfenster']);
         
