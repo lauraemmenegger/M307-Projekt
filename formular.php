@@ -120,12 +120,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = true;
     }
 
-    // 8. ZEITFENSTER (required)
     if (isset($_POST['zeitfenster'])) {
         $zeitfenster = trim($_POST['zeitfenster']);
+        
+        // Hier definieren wir die einzig erlaubten Werte (ohne das ausgebuchte Feld!)
+        $erlaubte_zeiten = ['16:00 - 18:30', '19:00 - 21:30'];
+    
         if (empty($zeitfenster)) {
             $error = true;
             $errorMessages[] = "Bitte wähle ein Zeitfenster aus.";
+        } elseif (!in_array($zeitfenster, $erlaubte_zeiten)) {
+            // Wenn jemand versucht, die ausgebuchte oder eine gefälschte Zeit zu senden:
+            $error = true;
+            $errorMessages[] = "Ungültiges Zeitfenster gewählt oder der Termin ist bereits ausgebucht.";
         }
     } else {
         $error = true;
