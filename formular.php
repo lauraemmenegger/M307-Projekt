@@ -152,9 +152,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 10. PAKETAUSWAHL (required)
     if (isset($_POST['paket'])) {
         $paket = trim($_POST['paket']);
-        if (empty($paket)) {
+        
+        // Die exakten Werte aus deinen HTML-Radio-Buttons
+        $erlaubte_pakete = ['Cocktail Simple', 'Cocktail & Food', 'Cocktail Premium'];
+    
+        if (!in_array($paket, $erlaubte_pakete)) {
             $error = true;
-            $errorMessages[] = "Bitte wähle ein Workshop-Paket aus.";
+            $errorMessages[] = "Das ausgewählte Workshop-Paket existiert nicht.";
         }
     } else {
         $error = true;
