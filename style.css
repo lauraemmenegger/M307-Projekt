@@ -14,13 +14,23 @@
 }
 
 /* Grund-Layout der Seite */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--dark-color);
-    line-height: 1.6;
-    padding: 20px;
-    margin: 0;
+:root {
+    /* Von #e38f6b auf ein etwas kräftigeres, dunkleres Terrakotta/Sand gesetzt */
+    --primary-color: #c46d49;     /* Wärmeres Sand/Gold für Buttons und Akzente */
+    
+    /* Von #d5c1ae auf ein kontrastreicheres, dunkleres Graubraun/Olive gesetzt */
+    --secondary-color: #8a7765;   /* Sanftes Olivgrün für die Rahmen */
+    
+    /* Bleibt super lesbar */
+    --dark-color: #333333;        /* Dunkelgrau für gute Textlesbarkeit */
+    --light-color: #faf9f8;       /* Sehr helles Grau für den Fieldset-Hintergrund */
+    --bg-color: #fae0cd;          /* Cremefarbener Seitenhintergrund */
+
+    /* NEU: Farben für die Validierung */
+    /* Das alte Grün (#2a9d8f) war auf Weiss/Creme zu hell für Text. Jetzt dunkler und satter: */
+    --valid-color: #1b665d;       /* Angenehmes Grün für gültige Felder */
+    /* Das alte Rot (#e63946) leicht abgedunkelt, um auf Creme perfekt lesbar zu sein: */
+    --invalid-color: #b81d2a;     /* Klares Rot für ungültige Felder */
 }
 
 /* Weisser Inhaltscontainer, der das Formular zentriert */
