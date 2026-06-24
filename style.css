@@ -131,11 +131,11 @@ input:focus, select:focus, textarea:focus {
    ========================================== */
 
 /* 1. GÜLTIGE FELDER: Wenn das Feld korrekt ausgefüllt ist */
-input:text:valid,
-input:email:valid,
-input:tel:valid,
-input:date:valid,
-input:number:valid,
+input[type="text"]:valid, 
+input[type="email"]:valid, 
+input[type="tel"]:valid, 
+input[type="date"]:valid, 
+input[type="number"]:valid,
 select:valid {
     border-color: var(--valid-color);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232a9d8f' width='18' height='18'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
